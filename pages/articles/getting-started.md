@@ -1,7 +1,7 @@
 ---
 title: Get started with Markdoc
 description: How to get started with Markdoc
-cover: /images/martin-sanchez-gD3dUQpMlvk-unsplash.jpg
+cover: /zyro-image.png
 ---
 
 ## Get started with Markdoc
@@ -25,6 +25,27 @@ To install markdoc in Next.js, run the following command:
 npm install @markdoc/next.js @markdoc/markdoc
 ```
 
+reactjs example
+
+```jsx
+import React from "react";
+import { Markdoc } from "@markdoc/next.js";
+import { MarkdocProvider } from "@markdoc/markdoc";
+
+export default function Home() {
+  return (
+    <MarkdocProvider>
+      <Markdoc
+        source={`
+          # Hello World
+          This is a paragraph
+        `}
+      />
+    </MarkdocProvider>
+  );
+}
+```
+
 ### Background
 
 Markdoc was built by [Stripe](https://stripe.com/) to power their developer documentation.
@@ -46,10 +67,12 @@ The title of this page is: **{% $markdoc.frontmatter.title %}** after all
 {% partial file="bike-promo.md" variables={title: "Getting started with Markdoc"} /%}
 
 {% if includes($markdoc.frontmatter.title, "Llamas") %}
-  > This page is about Llamas
 
-  {% else /%}
-  > This page is not about Llamas
-{% /if %}
+> This page is about Llamas
+
+{% else /%}
+
+> This page is not about Llamas
+> {% /if %}
 
 ![image](/vercel.svg)

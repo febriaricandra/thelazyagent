@@ -51,38 +51,62 @@ const Articles = ({ articles }) => {
   return (
     <>
       <Head>
-        <title>My articles</title>
+        <title>Articles</title>
         <meta name="description" content="View all my articles" />
+        <link rel="icon" href="/zyro-image.png" />
       </Head>
 
       <section>
-        <header className="articles-header">
-          <div className="wrapper">
-            <h1 className="font-extrabold text-5xl">
-              Hey there, view all my articles
-            </h1>
+        <div class="bg-white py-6 sm:py-8 lg:py-12">
+          <div class="mx-auto max-w-screen-2xl px-4 md:px-8">
+            <div class="rounded-lg bg-gray-100 px-4 py-6 md:py-8 lg:py-12">
+              <p class="mb-2 text-center font-semibold text-indigo-500 md:mb-3 lg:text-lg">
+                Introducing
+              </p>
+
+              <h2 class="mb-4 text-center text-2xl font-bold text-gray-800 md:mb-6 lg:text-3xl">
+                Revolutionary way to build the web
+              </h2>
+
+              <p class="mx-auto max-w-screen-md text-center text-gray-500 md:text-lg">
+                This is a section of some simple filler text, also known as
+                placeholder text. It shares some characteristics of a real
+                written text but is random or otherwise generated.
+              </p>
+            </div>
           </div>
-        </header>
-        <ul className="articles">
-          {articles.map((article) => (
-            <li key={article.slug} className="article">
-              <Link href={`/articles/${article.slug}`}>
-                <header className="article-item-header">
-                  <Image
-                    src={article.cover}
-                    width={300}
-                    height={200}
-                    alt="cover"
-                  />
-                  <div className="details">
-                    <h2 className="font-bold text-3xl">{article.title}</h2>
-                    <p> {article.description} </p>
+        </div>
+
+        <section class="bg-gray-100">
+          <div class="relative items-center w-full px-5 py-12 mx-auto md:px-12 lg:px-20 max-w-7xl">
+            <ol
+              class="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-3 sm:grid-cols-2"
+              role="list"
+            >
+              {articles.map((article) => (
+              <li key={article.slug} class="lgcol-span-2">
+                <Link href={`/articles/${article.slug}`}>
+                  <div class="flex items-end justify-center">
+                    <div class="flex overflow-hidden">
+                      <Image
+                        class="object-cover w-full rounded-lg shadow-lg"
+                        src={article.cover}
+                        alt=""
+                      />
+                    </div>
                   </div>
-                </header>
-              </Link>
-            </li>
-          ))}
-        </ul>
+                  <h3 class="mt-5 text-lg font-medium leading-6 text-black">
+                    {article.title}
+                  </h3>
+                  <p class="mt-2 text-base text-gray-500 line-clamp-2">
+                    {article.description}
+                  </p>
+                </Link>
+              </li>
+              ))}
+            </ol>
+          </div>
+        </section>
       </section>
     </>
   );
