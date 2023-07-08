@@ -30,7 +30,7 @@ export default function Home() {
                 TheLazyAgent
               </p>
               <p class="max-w-xl mx-auto mt-4 text-lg tracking-tight text-gray-600">
-                Febriari Candra Guritno`s personal website and blog. I write about tech, programming, and life.🚀
+                I write about tech, programming, and life.🚀
                 the content here is still under construction, so please be patient.🙏
               </p>
             </div>

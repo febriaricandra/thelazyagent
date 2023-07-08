@@ -5,7 +5,7 @@ const { default: Image } = require("next/image");
 const SiteHeader = () => {
   return (
     <header className="site-header">
-      <div className="wrapper">
+      <div className="wrapper flex flex-row items-center">
         <Link href={"/"}>
           <figure title="Site header">
             <Image
