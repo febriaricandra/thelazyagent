@@ -17,7 +17,7 @@ const ArticleLayout = ({ markdoc, children }) => {
       <main className="container mx-auto px-4 sm:px-6 lg:px-16">
         <article className="prose prose-lg max-w-none">
           <div className="mt-6 mb-12">
-            <Image src={cover} alt="cover" className="w-1/2 mx-auto" />
+            <Image src={cover} alt="cover" className="w-full mx-auto" />
           </div>
           {children}
         </article>
